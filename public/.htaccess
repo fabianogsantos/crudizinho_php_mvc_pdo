@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+#Options -Multiviews
+#RewriteEngine On 
+#RewriteBase /app/public
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.+)$ index.php?url=$1 [NC,L]
+
+RewriteEngine On
+
+#aqui criamos uma condição para que os arquivos sejam ignorados nas regras abaixo
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#aqui criamos uma condição para que diretórios sejam ignorados nas regras abaixo
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?url=$1 [NC,L]
+</IfModule>
