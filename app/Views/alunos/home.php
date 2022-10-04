@@ -1,1 +1,2 @@
-<h1 class="h2"><?= $dados['titulo'] ?></h1>
+<h1><?= $dados['titulo'] ?></h1>
+<p class="lead">Exemplo de conteúdo</p>
